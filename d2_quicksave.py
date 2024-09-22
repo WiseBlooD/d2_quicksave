@@ -37,7 +37,7 @@ def quicksave():
         time.sleep(0.2)
         pyautogui.press('enter')
         time.sleep(0.2)
-        pyautogui.press('esc')
+        pyautogui.press('enter')
         time.sleep(0.2)
         pyautogui.press('esc')          
         time.sleep(0.2)
