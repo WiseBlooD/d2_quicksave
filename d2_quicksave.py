@@ -20,7 +20,7 @@ save_key = config['Settings'].get('save_key', 'right_ctrl+e')
 save_name = config['Settings'].get('save_name', 'save_name')
 window_title = config['Settings'].get('window_title', 'Disciples II')
 save_directory = config['Settings'].get('save_directory', '')
-change_counter_key = config['Settings'].get('change_counter_key', 'ctrl+f7')
+change_counter_key = config['Settings'].get('change_counter_key', 'ctrl+f7') # Хоткей для изменения имени \ числа сохранения
 save_file_name = config['Settings'].get('save_file_name', '')
 save_counter = int(config['Settings'].get('save_counter', 1))  # Счетчик для сохранений
 use_counter_save = config['Settings'].getboolean('use_counter_save', True)  # Чекбокс по умолчанию активен
@@ -119,12 +119,12 @@ def toggle_pause(icon, item):
     global paused
     paused = not paused
     status = "Paused" if paused else "Active"
-    icon.title = f"Quicksave - {status}"  # Обновляем текст иконки
+    icon.title = f"Quicksave - {status}"  
 
     if paused:
-        icon.icon = Image.open('icon_paused.png')  # Меняем иконку на паузу
+        icon.icon = Image.open('icon_paused.png')  
     else:
-        icon.icon = Image.open('icon_active.png')  # Возвращаем стандартную иконку
+        icon.icon = Image.open('icon_active.png')  
 
     print(f"Режим переключен: {status}")
 
@@ -319,7 +319,7 @@ def setup_tray():
     icon.run()
 
 keyboard.add_hotkey(save_key, quicksave)
-keyboard.add_hotkey(change_counter_key, open_counter_window)  # Добавляем хоткей для вызова окна изменения save_counter
+keyboard.add_hotkey(change_counter_key, open_counter_window)  # Хоткей для вызова окна изменения save_counter
 keyboard.add_hotkey("ctrl+f8", delete_saves)  # Хоткей для удаления сохранений
 setup_tray()
 
